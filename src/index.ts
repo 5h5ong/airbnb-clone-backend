@@ -1,8 +1,12 @@
 import express from 'express';
+import cors from 'cors';
 import onlineExperiencesController from './controller/onlineExperiences/onlineExperiencesController';
 
-const app = express();
 const port = 4000;
+const app = express();
+
+// cors 설정
+app.use(cors());
 
 app.get('/', (req, res) => res.send('Hello World!'));
 app.get('/lists/online-experiences', onlineExperiencesController);
