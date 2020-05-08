@@ -3,7 +3,11 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  extends: ['airbnb-base'],
+  extends: [
+    'airbnb-base',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+  ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -14,5 +18,8 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint'],
-  rules: {},
+  rules: {
+    'import/no-unresolved': 'off',
+    'import/extensions': 'off',
+  },
 };
