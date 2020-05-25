@@ -11,7 +11,7 @@ export default async (payload: oeObjectType): Promise<void> => {
   const oeRepository = createRepository<OnlineExperiences>(OnlineExperiences);
 
   try {
-    oeRepository.save(payload);
+    await oeRepository.save(payload);
   } catch (error) {
     console.log('저장 과정에서 문제가 생겼습니다.', error);
   }
