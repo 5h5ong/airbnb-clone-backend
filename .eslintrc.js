@@ -7,6 +7,7 @@ module.exports = {
     'airbnb-base',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:prettier/recommended',
   ],
   globals: {
     Atomics: 'readonly',
@@ -21,5 +22,6 @@ module.exports = {
   rules: {
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
+    'comma-dangle': 'off',
   },
 };
