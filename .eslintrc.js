@@ -23,5 +23,6 @@ module.exports = {
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
     'comma-dangle': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
   },
 };
