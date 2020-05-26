@@ -1,5 +1,5 @@
-import createRepository from './createRepository/createRepository';
-import OnlineExperiences from '../entity/OnlineExperiences';
+import createRepository from '../createRepository/createRepository';
+import OnlineExperiences from '../../entity/OnlineExperiences';
 
 // id를 제외한 oe의 property들
 type oeObjectType = Omit<OnlineExperiences, 'id'>;
