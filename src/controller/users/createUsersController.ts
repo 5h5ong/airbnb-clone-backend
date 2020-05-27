@@ -1,9 +1,9 @@
 import experss from 'express';
 import insertUser, {
   userObjectType,
-} from '../../funtions/insertUser/insertUser';
-import checkUserObject from '../../funtions/check/checkUserObject';
-import stringEncryption from '../../funtions/encryption/stringEncryption';
+} from '../../functions/insertUser/insertUser';
+import checkUserObject from '../../functions/check/checkUserObject';
+import stringEncryption from '../../functions/encryption/stringEncryption';
 
 export default async (
   req: experss.Request,

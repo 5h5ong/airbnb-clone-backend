@@ -1,5 +1,5 @@
 import express from 'express';
-import getOnlineExperiences from '../../funtions/getOnlineExperiences/getOnlineExperiences';
+import getOnlineExperiences from '../../functions/getOnlineExperiences/getOnlineExperiences';
 
 interface OnlineExperiencesType {
   image: string;
