@@ -12,9 +12,10 @@ export default async (payload: userObjectType): Promise<void> => {
 
   try {
     await userRepository.save(payload);
+    /* eslint-disable */
     console.log('[유저 생성]', payload);
+    /* eslint-enable */
   } catch (error) {
-    // console.log('저장 과정에서 문제가 생겼습니다.', error);
     throw new Error('저장 과정에서 문제가 생겼습니다.');
   }
 };
