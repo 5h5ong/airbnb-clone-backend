@@ -3,6 +3,7 @@ import insertUser, {
   userObjectType,
 } from '../../funtions/insertUser/insertUser';
 import checkUserObject from '../../funtions/check/checkUserObject';
+import stringEncryption from '../../funtions/encryption/stringEncryption';
 
 export default async (
   req: experss.Request,
@@ -13,7 +14,13 @@ export default async (
   try {
     // await insertUser(userObject);
     if (checkUserObject(userObject)) {
-      await insertUser(userObject);
+      // user password 암호화
+      const encryptedObject: userObjectType = {
+        ...userObject,
+        password: await stringEncryption(userObject.password),
+      };
+
+      await insertUser(encryptedObject);
       res.json({ status: '유저 생성에 성공했습니다.' }).status(200);
     } else {
       throw new Error('property 형태가 올바르지 않음.');
