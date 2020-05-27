@@ -3,6 +3,7 @@ import { createConnection } from 'typeorm';
 import cors from 'cors';
 import onlineExperiencesController from './controller/onlineExperiences/onlineExperiencesController';
 import createUsersController from './controller/users/createUsersController';
+import VerifyUserController from './controller/users/VerifyUserController';
 
 const port = 4000;
 const app = express();
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => res.send('Hello World!'));
+app.post('/verify/user', VerifyUserController);
 app.get('/lists/online-experiences', onlineExperiencesController);
 app.post('/create/user', createUsersController);
 
