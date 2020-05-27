@@ -2,6 +2,7 @@ import express from 'express';
 import createRepository from '../../functions/createRepository/createRepository';
 import Users from '../../entity/Users';
 import checkEncryptedString from '../../functions/encryption/checkEncryptedString';
+import createToken from '../../functions/encryption/createToken';
 
 interface VerifyUserObject {
   email: string;
@@ -22,7 +23,13 @@ export default async (req: express.Request, res: express.Response) => {
       foundUser.password
     );
     if (passwordResult) {
-      res.status(200).json({ message: '유저 인증이 성공했습니다.' });
+      res.status(200).json({
+        message: '유저 인증이 성공했습니다.',
+        token: await createToken({
+          id: foundUser.id.toString(),
+          email: foundUser.email,
+        }),
+      });
     } else {
       res.status(400).json({ message: '유저 인증에 실패하였습니다.' });
     }
