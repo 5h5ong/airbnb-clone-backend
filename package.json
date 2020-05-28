@@ -9,6 +9,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
     "typeorm": "^0.2.25"
   },
   "devDependencies": {
@@ -17,6 +19,8 @@
     "@types/express": "^4.17.6",
     "@types/jsonwebtoken": "^8.5.0",
     "@types/mongodb": "^3.5.18",
+    "@types/passport": "^1.0.3",
+    "@types/passport-jwt": "^3.0.3",
     "@typescript-eslint/eslint-plugin": "^2.31.0",
     "@typescript-eslint/parser": "^2.31.0",
     "dotenv": "^8.2.0",
